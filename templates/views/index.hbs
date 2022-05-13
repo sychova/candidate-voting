@@ -1,0 +1,42 @@
+<html lang='en'>
+
+  <head>
+    {{>head}}
+    <title>Voting results</title>
+  </head>
+
+  <body>
+    <div class='wrapper'>
+      <main>
+        <section class='page__toolbar toolbar'>
+          <button
+            type='button'
+            class='btn btn-primary'
+            data-toggle='modal'
+            data-target='#modalVote'
+            title='Vote'
+          >VOTE FOR YOUR CANDIDATE!
+          </button>
+        </section>
+        <section class='page__table'>
+          <div class='table__container __container'>
+            <table class='table table-hover'>
+              <thead>
+                <tr>
+                  <th scope='col'>Photo</th>
+                  <th scope='col'>Info</th>
+                  <th scope='col'>Percent</th>
+                </tr>
+              </thead>
+              <tbody id='candidatesTable'></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+    {{>modalVote}}
+    {{>scripts}}
+    <script src='/js/app.js'></script>
+  </body>
+
+</html>

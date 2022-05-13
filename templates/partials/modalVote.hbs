@@ -1,0 +1,53 @@
+<div
+  class='modal'
+  id='modalVote'
+  tabindex='-1'
+  role='dialog'
+  aria-labelledby='modalVoteLabel'
+  aria-hidden='true'
+  data-backdrop='static'
+  data-keyboard='false'
+>
+  <div class='modal-dialog' role='document'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <h4 id='modal-title'></h4><button
+          class='close'
+          type='button'
+          data-dismiss='modal'
+          aria-label='Close'
+        ><span aria-hidden='true'>&times;</span></button>
+      </div>
+      <div class='modal-body'>
+        <form id='voteForm' action='/vote' method='POST'>
+          <div class='form-group'>
+            <label for='passportNumber'>Please enter your passport number:</label>
+            <input
+              class='form-control'
+              id='passportNumberI'
+              type='text'
+              name='passportNumber'
+              pattern='[A-Z]{2}[0-9]{7}'
+              placeholder='MP0000000'
+              required
+            /></div>
+          <div class='form-group'>
+            <label for='candidateId'>Please enter your candidate id:</label>
+            <input
+              class='form-control'
+              id='candidateIdI'
+              type='number'
+              name='candidateId'
+              placeholder='1'
+              required
+            /></div>
+          <button
+            class='btn btn-success modal-close'
+            type='submit'
+            id='vote'
+          >VOTE!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
