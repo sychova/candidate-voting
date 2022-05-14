@@ -4,28 +4,28 @@ exports.seed = (knex) => {
     .then(() => {
       return knex('votes').insert([
         {
-          passportNumber: '123456789',
-          candidateId: 1,
+          passportNumber: 'MP0000000',
+          candidateId: 6,
         },
         {
-          passportNumber: '123456789',
-          candidateId: 1,
+          passportNumber: 'MP0000000',
+          candidateId: 6,
         },
         {
-          passportNumber: '123456789',
-          candidateId: 1,
+          passportNumber: 'MP0000000',
+          candidateId: 6,
         },
         {
-          passportNumber: '123456789',
-          candidateId: 2,
+          passportNumber: 'MP0000000',
+          candidateId: 3,
         },
         {
-          passportNumber: '123456789',
-          candidateId: 2,
+          passportNumber: 'MP0000000',
+          candidateId: 3,
         },
         {
-          passportNumber: '123456789',
-          candidateId: 2,
+          passportNumber: 'MP0000000',
+          candidateId: 3,
         },
       ])
     })
