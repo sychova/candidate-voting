@@ -8,6 +8,7 @@ const submitVote = async (req, res) => {
       await req.flash('error', 'Sorry, voting only allowed from Belarus.')
     }
 
+    await voteSubmitter.call(req.body)
     res.redirect('/')
   } catch (error) {
     res.status(500).send(error)
