@@ -4,11 +4,11 @@ const { voteSubmitter } = require('../services/index')
 const submitVote = async (req, res) => {
   try {
     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
-    console.log(ip) // ip address of the user
-    console.log(lookup(ip)) // location of the user
-    // await voteSubmitter.call(req.body)
-    // res.render('./index')
-    res.send(lookup(ip))
+    if (lookup(ip) !== 'BY') {
+      await req.flash('error', 'Sorry, voting only allowed from Belarus.')
+    }
+
+    res.redirect('/')
   } catch (error) {
     res.status(500).send(error)
   }

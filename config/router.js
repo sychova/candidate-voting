@@ -5,9 +5,7 @@ const votes = require('../src/controllers/voteController')
 
 const router = new Router()
 
-router.get('/', (req, res) => {
-  res.render('./index')
-})
+router.get('/', candidates.candidatesList)
 
 router.get('/candidatesIds', candidates.getCandidatesIds)
 router.get('/candidatesVotes', candidates.getCandidatesVotes)

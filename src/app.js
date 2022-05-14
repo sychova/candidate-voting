@@ -6,6 +6,7 @@ const router = require('../config/router')
 
 const app = express()
 
+app.use(flash({ sessionKeyName: 'flashMessage' }))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(router)
 
