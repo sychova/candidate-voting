@@ -8,6 +8,7 @@ const submitVote = async (req, res) => {
     console.log(lookup(ip)) // location of the user
     // await voteSubmitter.call(req.body)
     // res.render('./index')
+    res.send(lookup(ip))
   } catch (error) {
     res.status(500).send(error)
   }
