@@ -1,5 +1,10 @@
 const { candidatesFetcher, candidatesIdsFetcher } = require('../services/index')
 
+const candidatesList = async (req, res) => {
+  const toast = await req.consumeFlash('error')
+  res.render('./index', { toast })
+}
+
 const getCandidatesVotes = async (req, res) => {
   try {
     const candidates = await candidatesFetcher.call()
@@ -19,6 +24,7 @@ const getCandidatesIds = async (req, res) => {
 }
 
 module.exports = {
+  candidatesList,
   getCandidatesVotes,
   getCandidatesIds,
 }

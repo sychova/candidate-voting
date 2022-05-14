@@ -1,11 +1,24 @@
 const express = require('express')
+const session = require('express-session')
 const hbs = require('hbs')
 const path = require('path')
+const { flash } = require('express-flash-message')
 const bodyParser = require('body-parser')
 const router = require('../config/router')
 
 const app = express()
 
+app.use(
+  session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 7,
+    },
+  }),
+)
+app.use(flash({ sessionKeyName: 'flashMessage' }))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(router)
 
