@@ -1,6 +1,7 @@
 const express = require('express')
 const hbs = require('hbs')
 const path = require('path')
+const { flash } = require('express-flash-message')
 const bodyParser = require('body-parser')
 const router = require('../config/router')
 
